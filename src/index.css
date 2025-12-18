@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* TeamFlow Color Palette */
+    --background: 10 100% 98%; /* Cream #FFF6F4 */
+    --foreground: 233 30% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 233 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 233 30% 20%;
+
+    --primary: 233 75% 61%; /* Primary Blue #525FE1 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 10 100% 96%;
+    --secondary-foreground: 233 30% 20%;
+
+    --muted: 10 40% 94%;
+    --muted-foreground: 233 15% 50%;
+
+    --accent: 25 95% 49%; /* Accent Orange #F86F03 */
+    --accent-foreground: 0 0% 100%;
+
+    --highlight: 37 100% 55%; /* Highlight Yellow #FFA41B */
+    --highlight-foreground: 233 30% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 10 30% 90%;
+    --input: 10 30% 90%;
+    --ring: 233 75% 61%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 233 30% 20%;
+    --sidebar-primary: 233 75% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 10 100% 96%;
+    --sidebar-accent-foreground: 233 30% 20%;
+    --sidebar-border: 10 30% 90%;
+    --sidebar-ring: 233 75% 61%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(233, 75%, 61%), hsl(233, 75%, 71%));
+    --gradient-accent: linear-gradient(135deg, hsl(25, 95%, 49%), hsl(37, 100%, 55%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(233 75% 61% / 0.1);
+    --shadow-md: 0 4px 16px -4px hsl(233 75% 61% / 0.15);
+    --shadow-lg: 0 8px 24px -6px hsl(233 75% 61% / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 233 30% 12%;
+    --foreground: 10 100% 98%;
+
+    --card: 233 25% 16%;
+    --card-foreground: 10 100% 98%;
+
+    --popover: 233 25% 16%;
+    --popover-foreground: 10 100% 98%;
+
+    --primary: 233 75% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 233 20% 20%;
+    --secondary-foreground: 10 100% 98%;
+
+    --muted: 233 20% 20%;
+    --muted-foreground: 233 15% 65%;
+
+    --accent: 25 95% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --highlight: 37 100% 55%;
+    --highlight-foreground: 233 30% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 10 100% 98%;
+
+    --border: 233 20% 25%;
+    --input: 233 20% 25%;
+    --ring: 233 75% 61%;
+
+    --sidebar-background: 233 25% 14%;
+    --sidebar-foreground: 10 100% 98%;
+    --sidebar-primary: 233 75% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 233 20% 20%;
+    --sidebar-accent-foreground: 10 100% 98%;
+    --sidebar-border: 233 20% 25%;
+    --sidebar-ring: 233 75% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

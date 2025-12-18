@@ -1,0 +1,17 @@
+project_id = "hsjfraplctiundwmtejg"
+
+[functions.send-invitation]
+verify_jwt = true
+
+[functions.workload-forecast]
+verify_jwt = false
+
+[functions.workload-forecast-test]
+verify_jwt = false
+
+[functions.workload-forecast-mock]
+verify_jwt = false
+
+[functions.task-time-estimator]
+verify_jwt = false
+
